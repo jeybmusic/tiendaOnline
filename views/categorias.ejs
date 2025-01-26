@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Categorias</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+<div class=" container pb-3 mt-2">
+
+<div class="row bg-dark">
+  <a class="boton" href="/">Regresar</a>
+  <h1 class="title">Categorias Disponibles</h1>
+</div>
+
+  
+    <div class="table-container">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>categoria</th>
+  
+            <th><a href="/agregarCategoria"><img class="imgtable" src="/icon/add.png"></a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let x=0; x < c.length;x++){ %>
+            <tr>
+              <td>
+                <%=c[x].id%>
+              </td>
+              <td>
+                <%=c[x].categoria%>
+              </td>
+              <td>
+                <a href="/updateCategoria/<%=c[x].id%>"><img class="imgtable" src="/icon/update.png"></a>
+                <a href="/deleteCategoria/<%=c[x].id%>"><img class="imgtable" src="/icon/borrar.png"></a>
+              </td>
+            </tr>
+            <% } %>
+              <!-- Agrega más filas según sea necesario -->
+        </tbody>
+      </table>
+    </div>
+</div>
+
+</body>
+</html>

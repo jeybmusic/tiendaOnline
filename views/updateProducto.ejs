@@ -1,0 +1,71 @@
+
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update</title>
+    <link rel="stylesheet" href="/css/agregar.css">
+</head>
+<body>
+
+  <div class="regresar">
+    regresar
+</div>
+
+<form class="formulario" action="/updateProductoPost/<%=p.id%>" method="post">
+
+  <div class="inputD">
+    
+    <label>codigo</label>
+    
+    <input type="text" name="codigo" value="<%=p.codigo%>"> 
+    
+</div>
+
+<div class="inputD">
+ 
+ <label>producto</label> 
+ 
+ <input type="text" name="producto" value="<%=p.producto%>"> 
+ 
+</div>
+
+<div class="inputD">
+   
+ <label>categoria_id</label> 
+
+ <input type="text" name="categoria_id" value="<%=p.categoriaId%>"> 
+ 
+</div>
+<div class="inputD">
+   
+ <label>existencia_actual</label> 
+
+ <input type="text" name="existencia_actual" value="<%=p.existenciaActual%>"> 
+ 
+</div>
+<div class="inputD">
+   
+ <label>precio</label> 
+
+ <input type="text" name="precio" value="<%=p.precio%>"> 
+ 
+</div>
+<button>Update</button>
+
+</form>
+<script>
+   const regresar = document.querySelector('.regresar');
+   regresar.addEventListener('click',()=>{
+    window.location.href='/productos';
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,54 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+<div class="container pb-3 mt-2">
+    
+  <div class="row bg-dark">
+      <a class="boton" href="/">Regresar</a>
+      <h1 class="title">Productos Disponibles</h1>
+  </div>
+  
+
+       <div class="table-container">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>codigo</th>
+          <th>producto</th>
+          <th>categoria_id</th>
+          <th>existencia_actual</th>
+          <th>precio</th>
+          <th><a href="/agregarProducto"><img class="imgtable" src="/icon/add.png"></a></th>
+      </tr>
+      </thead>
+      <tbody>
+        <% for(let x = 0; x < p.length;x++){ %>
+        <tr>
+          <td><%=p[x].id%></td>
+          <td><%=p[x].codigo%></td>
+          <td><%=p[x].producto%></td>
+          <td><%=p[x].categoriaId%></td>
+          <td><%=p[x].existenciaActual%></td>
+          <td><%=p[x].precio%></td>
+          <td>
+            <a href="/updateProducto/<%=p[x].id%>"><img class="imgtable" src="/icon/update.png"></a>
+            <a href="/deleteProducto/<%=p[x].id%>"><img class="imgtable" src="/icon/borrar.png"></a>
+          </td>
+          
+        </tr>
+        <% } %>
+        <!-- Agrega más filas según sea necesario -->
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
+
